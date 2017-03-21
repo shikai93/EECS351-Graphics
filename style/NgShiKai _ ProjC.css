@@ -1,0 +1,46 @@
+.information{
+    width: 80%;
+    border: 1px solid;
+    margin: 15px 10% ;
+    padding:15px 10px 15px 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    color: #00529B;
+    background-color: #BDE5F8;
+    background-image: url('info.png');
+    font-family: sans-serif;
+    font-size: small;
+    line-height: normal;
+}
+
+.info-text{
+    padding: 10px;
+}
+
+#error {
+    width: 340px;
+    border: 1px solid;
+    margin: 10px 0px;
+    padding:15px 10px 15px 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    color: #D8000C;
+    background-color: #FFBABA;
+    background-image: url('error.png');
+    font-family: sans-serif;
+    font-size: small;
+    line-height: normal;
+}
+
+.ui{
+    width: 400px;
+}
+
+.slower{
+    display: inline;
+    float: right;
+}
+
+.hidden {
+    display: none;
+}

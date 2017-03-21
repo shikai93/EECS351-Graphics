@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>EECS 351 Project C - Ng Shi Kai </title>
+    <link href="style/NgShiKai _ ProjC.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+  <body onload="main()">
+    <div class="canvas">
+      <canvas id="webgl" width="400" height="400">
+      Please use a browser that supports "canvas"
+      </canvas>
+    </div>
+
+    <div class="information">
+      <i class="fa fa-dot-circle-o"></i>
+      <span class="info-text">
+        Drag the mouse to shift the camera and look around the world.
+      </span> <br>
+      <i class="fa fa-dot-circle-o"></i>
+      <span class="info-text">
+        Press down on the "W","A","S" or "D" key to move front, left, back or right respectively.
+      </span><br>
+
+    </div>
+    <div id="error" class="hidden error">
+      <i class="fa fa-times" style="display: inline; float: right;" onclick="closeError()"></i>
+      <div id="error-msg"></div>
+    </div>
+		<div>
+			<button onclick="updateMode(modeEnum.GP)"> Gouraud Shading with Phong lighting </button>
+			<button onclick="updateMode(modeEnum.GB)"> Gouraud Shading with Blin-Phong lighting </button>
+			<button onclick="updateMode(modeEnum.PP)"> Phong Shading with Phong lighting </button>
+			<button onclick="updateMode(modeEnum.PB)"> Phong Shading with Blin-Phong lighting </button>
+			<div id="curr_mode">
+				Current Mode: Phong Shading with Blin-Phong lighting
+			</div>
+		</div>
+		<div>
+			<button onclick="toggleLight(0)">On/Off HeadLight</button>
+			<button onclick="toggleLight(1)">On/Off External Light</button>
+			<button onclick="moveLight(dirEnum.Left)">Move External Light Left</button>
+			<button onclick="moveLight(dirEnum.Right)">Move External Light Right</button>
+			<button onclick="moveLight(dirEnum.Up)">Move External Light Up</button>
+			<button onclick="moveLight(dirEnum.Down)">Move External Light Down</button>
+			<button onclick="moveLight(dirEnum.Forward)">Move External Light Forward</button>
+			<button onclick="moveLight(dirEnum.Backward)">Move External Light Backward</button>
+			<br>
+			Ambient RGB:<br>
+			R: <input type='number' id="ambientR" min="0" max="255" value='102'/>
+			G: <input type='number' id="ambientG" min="0" max="255" value='102'/>
+			B: <input type='number' id="ambientB" min="0" max="255" value='102'/>
+			<br>
+			Diffuse RGB:<br>
+			R: <input type='number' id="diffuseR" min="0" max="255" value='0'/>
+			G: <input type='number' id="diffuseG" min="0" max="255" value='255'/>
+			B: <input type='number' id="diffuseB" min="0" max="255" value='0'/>
+			<br>
+			Specular RGB:<br>
+			R: <input type='number' id="specR" min="0" max="255" value='0'/>
+			G: <input type='number' id="specG" min="0" max="255" value='255'/>
+			B: <input type='number' id="specB" min="0" max="255" value='0'/>
+			<br>
+		</div>
+  </body>
+	<script src="lib/webgl-utils.js"></script>
+	<script src="lib/webgl-debug.js"></script>
+	<script src="lib/cuon-utils.js"></script>
+	<script src="lib/cuon-matrix-mod.js"></script>
+	<script src="materials_Ayerdi.js"></script>
+	<script src="lights-JT.js"></script>
+	<script src="scripts/NgShiKai _ ProjC.js"></script>
+</html>
